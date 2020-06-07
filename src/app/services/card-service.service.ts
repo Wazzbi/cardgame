@@ -3,6 +3,8 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { from, Observable } from 'rxjs';
+import { PokeData } from '../models/pokeData';
+import * as pokeDataJson from '../../assets/pokeData.json';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,7 @@ import { from, Observable } from 'rxjs';
 
 export class CardService {
 
+  private pokeDataJs: any = (pokeDataJson as any).default;
   private basePath = '/images';
   private fileUploads: AngularFireList<any[]>;
 
@@ -33,6 +36,10 @@ export class CardService {
   getPokemonImageUrl(pokeNo: number): Observable<string> {
     const storageRef = firebase.storage().ref().child(`images/${pokeNo}.png`);
     return from(storageRef.getDownloadURL());
+  }
+
+  getPokemonData(pokeNo: number): PokeData {
+    return this.pokeDataJs[pokeNo]
   }
 
 }

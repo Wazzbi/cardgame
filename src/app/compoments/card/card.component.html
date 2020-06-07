@@ -1,3 +1,12 @@
 <div *ngIf="loaded">
-  <img [src]="imageUrl" alt="pokemon">
+  <div [class.firstPlayer]="firstPlayer">
+    <img [src]="imageUrl" alt="pokemon">
+  </div>
+
+  <div>
+    <p>Health: {{pokeData.health}}</p>
+    <p>Speed: {{pokeData.speed}}</p>
+    <p>Attack: {{pokeData.attack}}</p>
+    <p>Defense: {{pokeData.defense}}</p>
+  </div>
 </div>

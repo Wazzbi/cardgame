@@ -1,10 +1,12 @@
 <div class="board-backgroud">
   <div class="battle-area">
-    <div class="player">
-      <app-card [pokeNo]="pokeNo_1"></app-card>
+    <div class="active-pokemon player">
+      <app-card [pokeNo]="pokeNo_1" [firstPlayer]="true">
+      </app-card>
     </div>
-    <div class="opponent">
-      <app-card [pokeNo]="pokeNo_2"></app-card>
+    <div class="active-pokemon opponent">
+      <app-card [pokeNo]="pokeNo_2" [firstPlayer]="false">
+      </app-card>
     </div>
   </div>
 </div>

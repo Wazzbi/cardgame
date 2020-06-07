@@ -1,0 +1,56 @@
+{
+    "1": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "2": {
+        "health": 6,
+        "attack": 5,
+        "speed": 3,
+        "defense": 4
+    },
+    "3": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "4": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "5": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "6": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "7": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "8": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    },
+    "9": {
+        "health": 3,
+        "attack": 2,
+        "speed": 3,
+        "defense": 4
+    }
+}

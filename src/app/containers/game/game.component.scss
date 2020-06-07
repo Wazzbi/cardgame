@@ -1,0 +1,19 @@
+.battle-area {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+.active-pokemon{
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.active-pokemon.player{
+  border: 1px solid blue;
+}
+.opponent{
+  border: 1px solid red;
+}
