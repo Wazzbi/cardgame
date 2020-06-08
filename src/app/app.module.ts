@@ -13,8 +13,9 @@ import { CardComponent } from './compoments/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import {MatButtonModule} from '@angular/material/button';
-
 import * as firebase from 'firebase';
+import { StoreModule } from '@ngrx/store';
+import { cardReducer } from './store/card.reducer';
 firebase.initializeApp(environment.firebase);
 
 @NgModule({
@@ -31,7 +32,8 @@ firebase.initializeApp(environment.firebase);
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    MatButtonModule
+    MatButtonModule,
+    StoreModule.forRoot({ action: cardReducer })
   ],
   providers: [AuthService, CardService],
   bootstrap: [AppComponent]
