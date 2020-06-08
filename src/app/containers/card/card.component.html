@@ -1,22 +1,17 @@
-<div *ngIf="loaded === true; else loading" [class.firstPlayer]="firstPlayer">
+<div [class.firstPlayer]="firstPlayer">
   <div>
     <img [src]="imageUrl" alt="pokemon">
   </div>
 
-  <ng-container *ngIf="firstPlayer; else secondPlayer">
-    <button mat-flat-button (click)="battle('health')">Health: {{pokeData.health}}</button><br />
-    <button mat-flat-button (click)="battle('speed')">Speed: {{pokeData.speed}}</button><br />
-    <button mat-flat-button (click)="battle('attack')">Attack: {{pokeData.attack}}</button><br />
-    <button mat-flat-button (click)="battle('defense')">Defense: {{pokeData.defense}}</button>
-  </ng-container>
-  <ng-template #secondPlayer>
-    <button mat-flat-button [disableRipple]="true">Health: {{pokeData.health}}</button><br />
-    <button mat-flat-button [disableRipple]="true">Speed: {{pokeData.speed}}</button><br />
-    <button mat-flat-button [disableRipple]="true">Attack: {{pokeData.attack}}</button><br />
-    <button mat-flat-button [disableRipple]="true">Defense: {{pokeData.defense}}</button>
-  </ng-template>
+  <div>
+    <button mat-flat-button (click)="battle('health')" [disableRipple]="!firstPlayer">Health:
+      {{pokeData.health}}</button>
+    <button mat-flat-button (click)="battle('speed')" [disableRipple]="!firstPlayer">Speed:
+      {{pokeData.speed}}</button>
+    <button mat-flat-button (click)="battle('attack')" [disableRipple]="!firstPlayer">Attack:
+      {{pokeData.attack}}</button>
+    <button mat-flat-button (click)="battle('defense')" [disableRipple]="!firstPlayer">Defense:
+      {{pokeData.defense}}</button>
+  </div>
 
 </div>
-<ng-template #loading>
-  Loading...
-</ng-template>

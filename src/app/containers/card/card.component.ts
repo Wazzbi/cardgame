@@ -22,7 +22,7 @@ export class CardComponent implements OnDestroy, OnChanges {
 
   imageUrl: string;
   pokeData: PokeData;
-  loaded = false;
+  loaded: boolean;
   subscription: Subscription;
 
 
@@ -31,7 +31,7 @@ export class CardComponent implements OnDestroy, OnChanges {
     private store: Store<{ gameState: GameState }>) { }
 
   ngOnChanges() {
-    //this.loaded = false;
+    this.loaded = false;
     this.subscription = this.cardService.getPokemonImageUrl(this.pokeNo).subscribe(u => {
       this.imageUrl = u;
       this.pokeData = this.cardService.getPokemonData(this.pokeNo);
