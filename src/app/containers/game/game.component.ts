@@ -14,7 +14,7 @@ export class GameComponent implements OnInit {
 
   pokeNo_1: number;
   pokeNo_2: number;
-  gameState$: Observable<any>;
+  gameState$: Observable<GameState>;
 
   constructor(public cardService: CardService, private store: Store<{ gameState: GameState }>) {
     this.gameState$ = store.pipe(select('gameState'));

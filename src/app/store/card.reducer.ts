@@ -1,7 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
 import * as CardActions from './card.actions';
+import * as GameActions from './game.actions';
 
 export const initialState = {
+    game: {
+        score: {
+            player: 0,
+            opponent: 0
+        }
+    },
     players: {
         player: {
             activePokemon: {

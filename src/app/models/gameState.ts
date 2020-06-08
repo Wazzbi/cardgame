@@ -1,20 +1,26 @@
 export interface GameState {
+    game: {
+        score: {
+            player: number,
+            opponent: number
+        }
+    },
     players: {
         player: {
             activePokemon: {
-                health: null,
-                speed: null,
-                attack: null,
-                defense: null
+                health: number,
+                speed: number,
+                attack: number,
+                defense: number
             }
         },
         opponent: {
             activePokemon: {
-                health: null,
-                speed: null,
-                attack: null,
-                defense: null
+                health: number,
+                speed: number,
+                attack: number,
+                defense: number
             }
         }
-    };
-}
+    }
+};

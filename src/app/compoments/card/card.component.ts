@@ -35,14 +35,11 @@ export class CardComponent implements OnInit, OnDestroy {
       this.changeDetector.detectChanges();
     });
     this.pokeData = this.cardService.getPokemonData(this.pokeNo);
+
     if (this.firstPlayer) {
       this.store.dispatch(addCardPlayer({ payload: this.pokeData }));
-      console.log("firstPlayer: ", this.pokeData);
-      console.log(this.store);
     } else {
       this.store.dispatch(addCardOpponent({ payload: this.pokeData }));
-      console.log("opponent: ", this.pokeData);
-      console.log(this.store);
     }
   }
 
