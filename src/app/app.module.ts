@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import * as firebase from 'firebase';
 import { StoreModule } from '@ngrx/store';
 import { cardReducer } from './store/card.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 firebase.initializeApp(environment.firebase);
 
 @NgModule({
@@ -33,7 +34,11 @@ firebase.initializeApp(environment.firebase);
     AngularFireAuthModule,
     AngularFireStorageModule,
     MatButtonModule,
-    StoreModule.forRoot({ game: cardReducer })
+    StoreModule.forRoot({ gameState: cardReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    })
   ],
   providers: [AuthService, CardService],
   bootstrap: [AppComponent]

@@ -1,10 +1,12 @@
+
 import { CardService } from './../../services/card-service.service';
 import { Component, OnInit, Input, SimpleChanges, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { share } from 'rxjs/operators';
 import { PokeData } from 'src/app/models/pokeData';
-import { Store } from '@ngrx/store';
+import { Store, props } from '@ngrx/store';
 import { GameState } from 'src/app/models/gameState';
+import { addCardPlayer, addCardOpponent, removeCardPlayer, removeCardOpponent } from '../../store/card.actions';
 
 @Component({
   selector: 'app-card',
@@ -33,6 +35,13 @@ export class CardComponent implements OnInit, OnDestroy {
       this.changeDetector.detectChanges();
     });
     this.pokeData = this.cardService.getPokemonData(this.pokeNo);
+    if (this.firstPlayer) {
+      this.store.dispatch(addCardPlayer({payload: this.pokeData}));
+      console.log(this.store);
+    } else {
+      this.store.dispatch(addCardOpponent({payload: this.pokeData}));
+      console.log(this.store);
+    }
   }
 
   ngOnDestroy() {

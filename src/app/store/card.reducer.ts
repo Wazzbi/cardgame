@@ -50,7 +50,7 @@ const _cardReducer = createReducer(initialState,
             ...state.players.player,
             activePokemon: {
                 ...state.players.player.activePokemon,
-                ...addCardPlayer
+                ...addCardOpponent
             }
         }
     }
