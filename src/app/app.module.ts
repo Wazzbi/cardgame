@@ -33,7 +33,7 @@ firebase.initializeApp(environment.firebase);
     AngularFireAuthModule,
     AngularFireStorageModule,
     MatButtonModule,
-    StoreModule.forRoot({ action: cardReducer })
+    StoreModule.forRoot({ game: cardReducer })
   ],
   providers: [AuthService, CardService],
   bootstrap: [AppComponent]

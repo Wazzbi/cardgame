@@ -3,6 +3,8 @@ import { Component, OnInit, Input, SimpleChanges, OnDestroy, ChangeDetectorRef }
 import { Observable, Subscription } from 'rxjs';
 import { share } from 'rxjs/operators';
 import { PokeData } from 'src/app/models/pokeData';
+import { Store } from '@ngrx/store';
+import { GameState } from 'src/app/models/gameState';
 
 @Component({
   selector: 'app-card',
@@ -20,13 +22,14 @@ export class CardComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
 
-  constructor(public cardService: CardService, private changeDetector: ChangeDetectorRef) { }
+  constructor(public cardService: CardService,
+              private changeDetector: ChangeDetectorRef,
+              private store: Store<{ gameState: GameState}>) { }
 
   ngOnInit() {
     this.subscription = this.cardService.getPokemonImageUrl(this.pokeNo).subscribe(u => {
       this.imageUrl = u;
       this.loaded = true;
-
       this.changeDetector.detectChanges();
     });
     this.pokeData = this.cardService.getPokemonData(this.pokeNo);

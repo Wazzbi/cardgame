@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/services/card-service.service';
 import { from, Observable } from 'rxjs';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Store, select } from '@ngrx/store';
+import { GameState } from 'src/app/models/gameState';
 
 @Component({
   selector: 'app-game',
@@ -12,8 +14,11 @@ export class GameComponent implements OnInit {
 
   pokeNo_1: number;
   pokeNo_2: number;
+  gameState$: Observable<any>;
 
-  constructor(public cardService: CardService) { }
+  constructor(public cardService: CardService, private store: Store<{ gameState: GameState}>) {
+    this.gameState$ = store.pipe(select('gameState'));
+   }
 
   ngOnInit() {
     this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
