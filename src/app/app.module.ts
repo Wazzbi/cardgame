@@ -12,6 +12,7 @@ import { GameComponent } from './containers/game/game.component';
 import { CardComponent } from './compoments/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import {MatButtonModule} from '@angular/material/button';
 
 import * as firebase from 'firebase';
 firebase.initializeApp(environment.firebase);
@@ -29,7 +30,8 @@ firebase.initializeApp(environment.firebase);
     AngularFireModule.initializeApp(environment.firebase, 'letslearn-dev'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatButtonModule
   ],
   providers: [AuthService, CardService],
   bootstrap: [AppComponent]
