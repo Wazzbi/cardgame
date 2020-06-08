@@ -1,11 +1,11 @@
 <div class="board-backgroud">
   <div class="battle-area">
     <div class="scoreboard">
-      {{ (gameState$ | async).game.score.player }} : {{ (gameState$ | async).game.score.opponent }}
+      {{ gameState.game.score.player }} : {{ gameState.game.score.opponent }}
     </div>
 
     <div class="active-pokemon player">
-      <app-card [pokeNo]="pokeNo_1" [firstPlayer]="true">
+      <app-card [pokeNo]="pokeNo_1" [firstPlayer]="true" (battleAttr)="battle($event)">
       </app-card>
     </div>
     <div class="active-pokemon opponent">

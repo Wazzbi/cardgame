@@ -87,6 +87,25 @@ const _cardReducer = createReducer(initialState,
             }
         }
     })),
+    on(GameActions.increaseScorePlayer, (state, { payload }) => ({
+        ...state,
+        game: {
+            score: {
+                ...state.game.score,
+                player: state.game.score.player + payload
+            }
+        }
+    })),
+    on(GameActions.increaseScoreOpponent, (state, { payload }) => ({
+        ...state,
+        game: {
+            score: {
+                ...state.game.score,
+                opponent: state.game.score.opponent + payload
+            }
+        }
+    })),
+
 );
 
 export function cardReducer(state, action) {
