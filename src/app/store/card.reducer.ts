@@ -36,8 +36,12 @@ const _cardReducer = createReducer(initialState,
           player: {
               ...state.players.player,
               activePokemon: {
-                  ...state.players.player.activePokemon,
-                  ...addCardPlayer
+                  health: 1,
+                  speed: 2,
+                  attack: 3,
+                  defense: 4
+                  //...state.players.player.activePokemon,
+                  //...addCardPlayer
               }
           }
       }

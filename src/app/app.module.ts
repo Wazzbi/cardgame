@@ -29,6 +29,7 @@ firebase.initializeApp(environment.firebase);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    
     AngularFireModule.initializeApp(environment.firebase, 'letslearn-dev'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -39,6 +40,7 @@ firebase.initializeApp(environment.firebase);
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     })
+    
   ],
   providers: [AuthService, CardService],
   bootstrap: [AppComponent]
