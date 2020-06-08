@@ -1,12 +1,14 @@
-<div *ngIf="loaded">
-  <div [class.firstPlayer]="firstPlayer">
-    <img [src]="imageUrl" alt="pokemon">
-  </div>
+<div *ngIf="loaded" [class.firstPlayer]="firstPlayer">
 
-  <div>
-    <button mat-flat-button>Health: {{pokeData.health}}</button><br/>
-    <button mat-flat-button>Speed: {{pokeData.speed}}</button><br/>
-    <button mat-flat-button>Attack: {{pokeData.attack}}</button><br/>
-    <button mat-flat-button>Defense: {{pokeData.defense}}</button>
-  </div>
+    <div >
+      <img [src]="imageUrl" alt="pokemon">
+    </div>
+  
+    <div>
+      <button mat-flat-button [disableRipple]="!firstPlayer">Health: {{pokeData.health}}</button><br/>
+      <button mat-flat-button [disableRipple]="!firstPlayer">Speed: {{pokeData.speed}}</button><br/>
+      <button mat-flat-button [disableRipple]="!firstPlayer">Attack: {{pokeData.attack}}</button><br/>
+      <button mat-flat-button [disableRipple]="!firstPlayer">Defense: {{pokeData.defense}}</button>
+    </div>
+
 </div>

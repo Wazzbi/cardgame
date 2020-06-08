@@ -15,7 +15,7 @@ export class CardComponent implements OnInit, OnDestroy {
   @Input() firstPlayer: boolean;
 
   imageUrl: string;
-  pokeData: PokeData
+  pokeData: PokeData;
   loaded: boolean;
   subscription: Subscription;
 
