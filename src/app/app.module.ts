@@ -12,7 +12,7 @@ import { GameComponent } from './containers/game/game.component';
 import { CardComponent } from './compoments/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import * as firebase from 'firebase';
 import { StoreModule } from '@ngrx/store';
 import { cardReducer } from './store/card.reducer';
@@ -29,7 +29,7 @@ firebase.initializeApp(environment.firebase);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    
+
     AngularFireModule.initializeApp(environment.firebase, 'letslearn-dev'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -40,7 +40,7 @@ firebase.initializeApp(environment.firebase);
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     })
-    
+
   ],
   providers: [AuthService, CardService],
   bootstrap: [AppComponent]

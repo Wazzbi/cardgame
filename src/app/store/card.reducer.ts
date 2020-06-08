@@ -1,11 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import {
-    addCardPlayer,
-    addCardOpponent,
-    removeCardPlayer,
-    removeCardOpponent
-} from './card.actions';
- 
+import * as CardActions from './card.actions';
+
 export const initialState = {
     players: {
         player: {
@@ -29,70 +24,64 @@ export const initialState = {
 
 // TODO: ukládat i obrázky (aspoň url)
 const _cardReducer = createReducer(initialState,
-  on(addCardPlayer, state => ({
-      ...state,
-      players: {
-          ...state.players,
-          player: {
-              ...state.players.player,
-              activePokemon: {
-                  health: 1,
-                  speed: 2,
-                  attack: 3,
-                  defense: 4
-                  //...state.players.player.activePokemon,
-                  //...addCardPlayer
-              }
-          }
-      }
+    on(CardActions.addCardPlayer, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            player: {
+                ...state.players.player,
+                activePokemon: {
+                    ...payload
+                }
+            }
+        }
     })),
-  on(addCardOpponent, state => ({
-    ...state,
-    players: {
-        ...state.players,
-        opponent: {
-            ...state.players.player,
-            activePokemon: {
-                ...state.players.player.activePokemon,
-                ...addCardOpponent
+    on(CardActions.addCardOpponent, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            opponent: {
+                ...state.players.player,
+                activePokemon: {
+                    ...payload
+                }
             }
         }
-    }
-  })),
-  on(removeCardPlayer, state => ({
-    ...state,
-    players: {
-        ...state.players,
-        player: {
-            ...state.players.player,
-            activePokemon: {
-                ...state.players.player.activePokemon,
-                health: null,
-                speed: null,
-                attack: null,
-                defense: null
+    })),
+    on(CardActions.removeCardPlayer, state => ({
+        ...state,
+        players: {
+            ...state.players,
+            player: {
+                ...state.players.player,
+                activePokemon: {
+                    ...state.players.player.activePokemon,
+                    health: null,
+                    speed: null,
+                    attack: null,
+                    defense: null
+                }
             }
         }
-    }
-  })),
-  on(removeCardOpponent, state => ({
-    ...state,
-    players: {
-        ...state.players,
-        opponent: {
-            ...state.players.player,
-            activePokemon: {
-                ...state.players.player.activePokemon,
-                health: null,
-                speed: null,
-                attack: null,
-                defense: null
+    })),
+    on(CardActions.removeCardOpponent, state => ({
+        ...state,
+        players: {
+            ...state.players,
+            opponent: {
+                ...state.players.player,
+                activePokemon: {
+                    ...state.players.player.activePokemon,
+                    health: null,
+                    speed: null,
+                    attack: null,
+                    defense: null
+                }
             }
         }
-    }
-  })),
+    })),
 );
- 
+
 export function cardReducer(state, action) {
-  return _cardReducer(state, action);
+    return _cardReducer(state, action);
 }

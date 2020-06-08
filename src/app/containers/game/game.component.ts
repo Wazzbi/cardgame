@@ -16,9 +16,9 @@ export class GameComponent implements OnInit {
   pokeNo_2: number;
   gameState$: Observable<any>;
 
-  constructor(public cardService: CardService, private store: Store<{ gameState: GameState}>) {
+  constructor(public cardService: CardService, private store: Store<{ gameState: GameState }>) {
     this.gameState$ = store.pipe(select('gameState'));
-   }
+  }
 
   ngOnInit() {
     this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;

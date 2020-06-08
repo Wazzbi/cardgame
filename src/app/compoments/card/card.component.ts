@@ -25,8 +25,8 @@ export class CardComponent implements OnInit, OnDestroy {
 
 
   constructor(public cardService: CardService,
-              private changeDetector: ChangeDetectorRef,
-              private store: Store<{ gameState: GameState}>) { }
+    private changeDetector: ChangeDetectorRef,
+    private store: Store<{ gameState: GameState }>) { }
 
   ngOnInit() {
     this.subscription = this.cardService.getPokemonImageUrl(this.pokeNo).subscribe(u => {
@@ -36,10 +36,12 @@ export class CardComponent implements OnInit, OnDestroy {
     });
     this.pokeData = this.cardService.getPokemonData(this.pokeNo);
     if (this.firstPlayer) {
-      this.store.dispatch(addCardPlayer({payload: this.pokeData}));
+      this.store.dispatch(addCardPlayer({ payload: this.pokeData }));
+      console.log("firstPlayer: ", this.pokeData);
       console.log(this.store);
     } else {
-      this.store.dispatch(addCardOpponent({payload: this.pokeData}));
+      this.store.dispatch(addCardOpponent({ payload: this.pokeData }));
+      console.log("opponent: ", this.pokeData);
       console.log(this.store);
     }
   }
