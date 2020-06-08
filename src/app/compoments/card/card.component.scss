@@ -1,9 +1,11 @@
 .firstPlayer{
     img{transform: scaleX(-1)};
 
-    button:hover{
-        color: red;
-        cursor: pointer;
+    button{
+        &:hover{
+            color: red;
+            cursor: pointer;
+        }
     }
     
 }
