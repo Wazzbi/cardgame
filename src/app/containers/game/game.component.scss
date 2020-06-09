@@ -5,24 +5,13 @@
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
 }
-.active-pokemon{
-  display: inline-block;
-  width: 100px;
-  height: 250px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-}
-.active-pokemon.player{
-  border: 1px solid blue;
-}
-.active-pokemon.opponent{
-  border: 1px solid red;
-}
 .scoreboard{
   text-align: center;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid black;
+}
+.active-pokemon{
+  display: inline-block;
 }

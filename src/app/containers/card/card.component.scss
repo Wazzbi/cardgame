@@ -1,4 +1,14 @@
-.firstPlayer{
+.player{
+    text-align: center;
+    width: 120px;
+    height: 250px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.first{
+    border: 1px solid blue;
+    
     img{transform: scaleX(-1)};
 
     button{
@@ -6,10 +16,17 @@
             color: red;
             cursor: pointer;
         }
-    }
-    
+    }   
+}
+.second{
+    border: 1px solid red;
 }
 button{
     width: 100%; 
     cursor: default;    
+}
+.placeholder{
+    width: 96px;
+    height: 96px;
+    background-color: red;
 }

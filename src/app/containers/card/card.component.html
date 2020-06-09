@@ -1,6 +1,6 @@
-<div [class.firstPlayer]="firstPlayer">
+<div class="player" [class.first]="firstPlayer" [class.second]="!firstPlayer">
   <div>
-    <img [src]="imageUrl" alt="pokemon">
+    <img [src]="imageUrl">
   </div>
 
   <div>
@@ -13,5 +13,4 @@
     <button mat-flat-button (click)="battle('defense')" [disableRipple]="!firstPlayer">Defense:
       {{pokeData.defense}}</button>
   </div>
-
 </div>

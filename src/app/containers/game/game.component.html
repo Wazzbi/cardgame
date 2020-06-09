@@ -4,11 +4,11 @@
       {{ gameState.game.score.player }} : {{ gameState.game.score.opponent }}
     </div>
 
-    <div class="active-pokemon player">
+    <div class="active-pokemon">
       <app-card [pokeNo]="pokeNo_1" [firstPlayer]="true" (battleAttr)="battle($event)">
       </app-card>
     </div>
-    <div class="active-pokemon opponent">
+    <div class="active-pokemon">
       <app-card [pokeNo]="pokeNo_2" [firstPlayer]="false">
       </app-card>
     </div>
