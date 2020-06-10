@@ -24,6 +24,7 @@ export class CardComponent implements OnDestroy, OnChanges {
   pokeData: PokeData;
   loaded: boolean;
   subscription: Subscription;
+  atrrChosen: boolean;
 
 
   constructor(public cardService: CardService,
@@ -32,6 +33,7 @@ export class CardComponent implements OnDestroy, OnChanges {
 
   ngOnChanges() {
     this.loaded = false;
+    this.atrrChosen = false;
     this.subscription = this.cardService.getPokemonImageUrl(this.pokeNo).subscribe(u => {
       this.imageUrl = u;
       this.pokeData = this.cardService.getPokemonData(this.pokeNo);
@@ -54,7 +56,12 @@ export class CardComponent implements OnDestroy, OnChanges {
   }
 
   battle(compareAtrr: string) {
-    this.battleAttr.emit(compareAtrr);
+    this.atrrChosen = true;
+    setTimeout(() => {
+      this.battleAttr.emit(compareAtrr);
+      this.atrrChosen = false;
+    }, 1500);
+
   }
 
 }
