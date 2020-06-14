@@ -9,7 +9,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { GameComponent } from './containers/game/game.component';
-import { CardComponent } from './containers/card/card.component';
+import { CardComponent } from './compoments/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { MatButtonModule } from '@angular/material/button';

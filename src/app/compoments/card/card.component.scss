@@ -1,0 +1,43 @@
+.player{
+    text-align: center;
+    width: 120px;
+    height: 250px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.first{
+    border: 1px solid blue;
+
+    .mat-flat-button{
+        background-color: transparent;
+    }
+    
+    img{transform: scaleX(-1)};
+
+    @media (hover: hover) {
+        button{
+            &:hover{
+                color: red;
+                cursor: pointer;
+            }
+        }
+    }  
+}
+.second{
+    border: 1px solid red; 
+    
+    .mat-flat-button{
+        background-color: transparent;
+    }
+}
+button{
+    width: 100%; 
+    cursor: default;
+    
+}
+.pokemon-image{
+  margin: 0 auto;
+  height: 96px;
+  width: 96px;
+}
