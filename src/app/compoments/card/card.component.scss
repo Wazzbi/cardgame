@@ -1,18 +1,29 @@
 .player{
     text-align: center;
-    width: 120px;
-    height: 250px;
+    width: 140px;
+    height: 300px;
     margin: 10px;
-    padding: 10px;
     border-radius: 5px;
-}
-.first{
-    border: 1px solid blue;
 
     .mat-flat-button{
-        background-color: transparent;
+        margin: 2px;
+        background-color: rgba(255, 255, 255, 0.322);
+
     }
+
+    button{
+        width: 100%; 
+        cursor: default;
+
+        &:disabled{
+            color: black;
+        }
+        
+    }
+
     
+}
+.first{
     img{transform: scaleX(-1)};
 
     @media (hover: hover) {
@@ -24,20 +35,13 @@
         }
     }  
 }
-.second{
-    border: 1px solid red; 
-    
-    .mat-flat-button{
-        background-color: transparent;
-    }
-}
-button{
-    width: 100%; 
-    cursor: default;
-    
-}
 .pokemon-image{
   margin: 0 auto;
-  height: 96px;
-  width: 96px;
+  height: 144px;
+  width: 144px;
+  img {
+    text-align: center;
+    width:144px; 
+    height:auto; 
+  }
 }

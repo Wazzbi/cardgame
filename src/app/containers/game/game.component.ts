@@ -24,6 +24,9 @@ export class GameComponent implements OnInit, OnDestroy {
   pokeNo_2_data: PokeData;
   gameState: GameState;
   waitingForPlayerAction: boolean;
+  battleAtrributePlayer: number;
+  battleAtrributeOpponent: number;
+  disableButtons: boolean;
   subscription: Subscription;
   subscription2: Subscription;
 
@@ -40,6 +43,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   play() {
     this.waitingForPlayerAction = true;
+    this.disableButtons = false;
     this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
     this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
 
@@ -60,22 +64,23 @@ export class GameComponent implements OnInit, OnDestroy {
 
   battle(battleAtrr: string) {
     this.waitingForPlayerAction = false;
+    this.disableButtons = true;
 
-    const battleAtrributePlayer: number =
+    this.battleAtrributePlayer =
       this.gameState.players.player.activePokemon[battleAtrr];
-    const battleAtrributeOpponent: number =
+    this.battleAtrributeOpponent =
       this.gameState.players.opponent.activePokemon[battleAtrr];
 
-    if (battleAtrributePlayer > battleAtrributeOpponent) {
+    if (this.battleAtrributePlayer > this.battleAtrributeOpponent) {
       this.store.dispatch(increaseScorePlayer({
-        payload: battleAtrributePlayer - battleAtrributeOpponent
+        payload: this.battleAtrributePlayer - this.battleAtrributeOpponent
       }));
       this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
       this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
 
-    } else if (battleAtrributePlayer < battleAtrributeOpponent) {
+    } else if (this.battleAtrributePlayer < this.battleAtrributeOpponent) {
       this.store.dispatch(increaseScoreOpponent({
-        payload: battleAtrributeOpponent - battleAtrributePlayer
+        payload: this.battleAtrributeOpponent - this.battleAtrributePlayer
       }));
       this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
       this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
@@ -87,6 +92,7 @@ export class GameComponent implements OnInit, OnDestroy {
     }
 
     setTimeout(() => {
+      this.disableButtons = false;
       this.play();
     }, 3000);
   }

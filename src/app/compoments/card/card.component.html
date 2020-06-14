@@ -5,13 +5,16 @@
   </div>
 
   <div>
-    <button mat-flat-button [disableRipple]="!firstPlayer" (click)="battle('health')">Health:
+    <button mat-flat-button [disableRipple]="!firstPlayer" [disabled]="disableButtons"
+      (click)="battle('health')">Health:
       {{pokeData.health}}</button>
-    <button mat-flat-button [disableRipple]="!firstPlayer" (click)="battle('speed')">Speed:
+    <button mat-flat-button [disableRipple]="!firstPlayer" [disabled]="disableButtons" (click)="battle('speed')">Speed:
       {{pokeData.speed}}</button>
-    <button mat-flat-button [disableRipple]="!firstPlayer" (click)="battle('attack')">Attack:
+    <button mat-flat-button [disableRipple]="!firstPlayer" [disabled]="disableButtons"
+      (click)="battle('attack')">Attack:
       {{pokeData.attack}}</button>
-    <button mat-flat-button [disableRipple]="!firstPlayer" (click)="battle('defense')">Defense:
+    <button mat-flat-button [disableRipple]="!firstPlayer" [disabled]="disableButtons"
+      (click)="battle('defense')">Defense:
       {{pokeData.defense}}</button>
   </div>
 

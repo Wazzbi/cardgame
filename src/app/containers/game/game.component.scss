@@ -9,12 +9,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-image: url('../../../assets/img/arena.jpg');
+  background-position: center;
+  background-size: cover;
 }
 .scoreboard{
   text-align: center;
   width: 100%;
   padding: 10px 0 10px 0;
-  background-color: pink;
+  background-color: rgb(232,62,53);
+  font-weight: bold;
 }
 .player-ground{
   position: absolute;
@@ -22,7 +26,6 @@
   left: 10px;
   width: auto;
   height: auto;
-  border: 1px solid #73AD21;
 }
 .opponent-ground{
   position: absolute;
@@ -30,20 +33,39 @@
   right: 10px;
   width: auto;
   height: auto;
-  border: 1px solid #73AD21;
 }
 .waiting-for-action{
   text-align: center;
-  width: 120px;
-  height: 250px;
+  width: 140px;
+  height: 300px;
   margin: 10px;
-  padding: 10px;
   border-radius: 5px;
-  border: 1px solid black;
 }
 .image,
 .text{
   display: block;
   text-align: center;
   padding-top: 20px;
+}
+.text{
+  padding-top: 20px;
+}
+.image{
+  margin: 0 auto;
+  height: 115px;
+  width: 115px;
+  img {
+    text-align: center;
+    width:115px; 
+    height:auto; 
+  }
+}
+.double-arrow{
+  position: absolute;
+  top: 100px;
+  left: 155px;
+  img{
+    width: 50px;
+    height: 50px;
+  }
 }

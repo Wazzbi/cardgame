@@ -24,8 +24,8 @@ export class CardComponent {
   @Input() pokeUrl: string;
   @Input() pokeData: PokeData;
   @Input() firstPlayer: boolean;
+  @Input() disableButtons: boolean;
   @Output() battleAtrr: EventEmitter<string> = new EventEmitter();
-
 
 
   constructor() { }
