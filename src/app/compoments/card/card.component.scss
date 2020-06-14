@@ -1,47 +1,45 @@
-.player{
-    text-align: center;
-    width: 140px;
-    height: 300px;
-    margin: 10px;
-    border-radius: 5px;
+.player {
+  text-align: center;
+  width: 140px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 5px;
 
-    .mat-flat-button{
-        margin: 2px;
-        background-color: rgba(255, 255, 255, 0.322);
+  .mat-flat-button {
+    margin: 2px;
+    background-color: rgba(255, 255, 255, 0.322);
+  }
 
+  button {
+    width: 100%;
+    cursor: default;
+
+    &:disabled {
+      color: black;
     }
+  }
+}
+.first {
+  img {
+    transform: scaleX(-1);
+  }
 
-    button{
-        width: 100%; 
-        cursor: default;
-
-        &:disabled{
-            color: black;
-        }
-        
+  @media (hover: hover) {
+    button {
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
     }
-
-    
+  }
 }
-.first{
-    img{transform: scaleX(-1)};
-
-    @media (hover: hover) {
-        button{
-            &:hover{
-                color: red;
-                cursor: pointer;
-            }
-        }
-    }  
-}
-.pokemon-image{
+.pokemon-image {
   margin: 0 auto;
   height: 144px;
   width: 144px;
   img {
     text-align: center;
-    width:144px; 
-    height:auto; 
+    width: 144px;
+    height: auto;
   }
 }

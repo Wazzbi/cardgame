@@ -1,4 +1,3 @@
-
 .battle-area {
   position: fixed;
   top: 200px;
@@ -9,32 +8,32 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('../../../assets/img/arena.jpg');
+  background-image: url("../../../assets/img/arena.jpg");
   background-position: center;
   background-size: cover;
 }
-.scoreboard{
+.scoreboard {
   text-align: center;
   width: 100%;
   padding: 10px 0 10px 0;
-  background-color: rgb(232,62,53);
+  background-color: rgb(232, 62, 53);
   font-weight: bold;
 }
-.player-ground{
+.player-ground {
   position: absolute;
   top: 55px;
   left: 10px;
   width: auto;
   height: auto;
 }
-.opponent-ground{
+.opponent-ground {
   position: absolute;
   top: 55px;
   right: 10px;
   width: auto;
   height: auto;
 }
-.waiting-for-action{
+.waiting-for-action {
   text-align: center;
   width: 140px;
   height: 300px;
@@ -42,29 +41,29 @@
   border-radius: 5px;
 }
 .image,
-.text{
+.text {
   display: block;
   text-align: center;
   padding-top: 20px;
 }
-.text{
+.text {
   padding-top: 20px;
 }
-.image{
+.image {
   margin: 0 auto;
   height: 115px;
   width: 115px;
   img {
     text-align: center;
-    width:115px; 
-    height:auto; 
+    width: 115px;
+    height: auto;
   }
 }
-.double-arrow{
+.double-arrow {
   position: absolute;
   top: 100px;
   left: 155px;
-  img{
+  img {
     width: 50px;
     height: 50px;
   }

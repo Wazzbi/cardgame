@@ -1,31 +1,34 @@
 <div class="board-backgroud">
   <div class="battle-area">
-
     <div class="scoreboard">
       {{ gameState.game.score.player }} : {{ gameState.game.score.opponent }}
     </div>
 
     <div class="player-ground">
-      <app-card [pokeUrl]="pokeNo_1_url" [pokeData]="pokeNo_1_data" [firstPlayer]="true"
-        [disableButtons]="disableButtons" (battleAtrr)="battle($event)">
+      <app-card
+        [pokeUrl]="pokeNo_1_url"
+        [pokeData]="pokeNo_1_data"
+        [firstPlayer]="true"
+        [disableButtons]="disableButtons"
+        (battleAtrr)="battle($event)"
+      >
       </app-card>
     </div>
 
     <div *ngIf="!waitingForPlayerAction" class="double-arrow">
       <ng-container *ngIf="battleAtrributePlayer > battleAtrributeOpponent">
-        <img src="../../../assets/img/green-double-arrow.png" alt="">
+        <img src="../../../assets/img/green-double-arrow.png" alt="" />
       </ng-container>
       <ng-container *ngIf="battleAtrributePlayer < battleAtrributeOpponent">
-        <img src="../../../assets/img/red-double-arrow.png" alt="">
+        <img src="../../../assets/img/red-double-arrow.png" alt="" />
       </ng-container>
-
     </div>
 
     <div class="opponent-ground">
       <ng-container *ngIf="waitingForPlayerAction; else showPokemon">
         <div class="waiting-for-action">
           <div class="image">
-            <img src="../../../assets/img/poke-ball.png" alt="">
+            <img src="../../../assets/img/poke-ball.png" alt="" />
           </div>
           <div class="text">
             choose battle atrribute
@@ -33,10 +36,13 @@
         </div>
       </ng-container>
       <ng-template #showPokemon>
-        <app-card [pokeUrl]="pokeNo_2_url" [pokeData]="pokeNo_2_data" [firstPlayer]="false">
+        <app-card
+          [pokeUrl]="pokeNo_2_url"
+          [pokeData]="pokeNo_2_data"
+          [firstPlayer]="false"
+        >
         </app-card>
       </ng-template>
     </div>
-
   </div>
 </div>
