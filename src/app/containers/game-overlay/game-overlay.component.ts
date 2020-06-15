@@ -25,6 +25,7 @@ export class GameOverlayComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
+  // TODO: po odehrání kartu odebrat z ruky. akce je připravená
   playedCard(card: CardData){
     console.log('emit dorazil', card);
     this.store.dispatch(apllyCardEffectToPlayersActivePokemon({ payload: card }));
