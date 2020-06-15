@@ -1,5 +1,8 @@
-<div class="hand-card">
+<button class="hand-card" (click)="playedCard.emit(card)">
   <p>
     {{ card.name }}
   </p>
-</div>
+  <p>
+    {{ card.effect }}
+  </p>
+</button>

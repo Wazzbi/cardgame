@@ -1,5 +1,5 @@
 import { CardData } from './../../models/cardData';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hand-card',
@@ -8,10 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HandCardComponent implements OnInit {
   @Input() card: CardData;
+  @Output() playedCard = new EventEmitter<CardData>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  test(){
+    console.log('emit dorazil');
   }
 
 }

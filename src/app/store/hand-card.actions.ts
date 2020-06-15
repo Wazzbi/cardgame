@@ -15,3 +15,6 @@ export const removeCardFromPlayersHand = createAction(
 export const removeCardFromOpponentsHand = createAction(
     '[Hand Card Component] Remove Card from Opponents hand',
     props<{ payload: number }>());
+export const apllyCardEffectToPlayersActivePokemon = createAction(
+    '[Hand Card Component] Aplly Card Effect',
+    props<{ payload: CardData }>());

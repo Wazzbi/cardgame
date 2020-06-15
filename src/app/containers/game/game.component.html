@@ -4,10 +4,11 @@
       {{ gameState.game.score.player }} : {{ gameState.game.score.opponent }}
     </div>
 
+    <!-- aktivní pokémon hráče -->
     <div class="player-ground">
       <app-card
         [pokeUrl]="pokeNo_1_url"
-        [pokeData]="pokeNo_1_data"
+        [pokeData]="gameState.players.player.activePokemon"
         [firstPlayer]="true"
         [disableButtons]="disableButtons"
         (battleAtrr)="battle($event)"
@@ -15,6 +16,7 @@
       </app-card>
     </div>
 
+    <!-- šipka kdo vyhrál kolo -->
     <div *ngIf="!waitingForPlayerAction" class="double-arrow">
       <ng-container *ngIf="battleAtrributePlayer > battleAtrributeOpponent">
         <img src="../../../assets/img/green-double-arrow.png" alt="" />
@@ -24,6 +26,7 @@
       </ng-container>
     </div>
 
+    <!-- aktivní pokémon soupeře -->
     <div class="opponent-ground">
       <ng-container *ngIf="waitingForPlayerAction; else showPokemon">
         <div class="waiting-for-action">
@@ -38,7 +41,7 @@
       <ng-template #showPokemon>
         <app-card
           [pokeUrl]="pokeNo_2_url"
-          [pokeData]="pokeNo_2_data"
+          [pokeData]="gameState.players.opponent.activePokemon"
           [firstPlayer]="false"
         >
         </app-card>

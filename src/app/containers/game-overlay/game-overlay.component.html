@@ -4,5 +4,5 @@
   <app-pokemon-detail [positionPlayer]="true"></app-pokemon-detail>
   <app-game></app-game>
   <app-pokemon-detail [positionPlayer]="false"></app-pokemon-detail>
-  <app-hand [cards]="gameState.players.player.hand.cards"></app-hand>
+  <app-hand [cards]="gameState.players.player.hand.cards" (playedCard)="playedCard($event)"></app-hand>
 </div>

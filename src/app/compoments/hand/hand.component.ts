@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CardData } from 'src/app/models/cardData';
 
 @Component({
@@ -8,6 +8,7 @@ import { CardData } from 'src/app/models/cardData';
 })
 export class HandComponent implements OnInit {
   @Input() cards: CardData[];
+  @Output() playedCard = new EventEmitter<CardData>();
 
   constructor() { }
 

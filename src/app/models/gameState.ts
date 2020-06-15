@@ -1,3 +1,4 @@
+import { PokeData } from 'src/app/models/pokeData';
 import { CardData } from './cardData';
 export interface GameState {
     game: {
@@ -8,23 +9,13 @@ export interface GameState {
     };
     players: {
         player: {
-            activePokemon: {
-                health: number,
-                speed: number,
-                attack: number,
-                defense: number
-            };
+            activePokemon: PokeData;
             hand: {
                 cards: CardData[],
             }
         },
         opponent: {
-            activePokemon: {
-                health: number,
-                speed: number,
-                attack: number,
-                defense: number
-            };
+            activePokemon: PokeData;
             hand: {
                 cards: CardData[],
             }

@@ -1,3 +1,4 @@
+import { PokeData } from 'src/app/models/pokeData';
 import { CardData } from './../models/cardData';
 import { createReducer, on } from '@ngrx/store';
 import * as CardActions from './card.actions';
@@ -163,6 +164,19 @@ const _cardReducer = createReducer(initialState,
                 ...state.players.opponent,
                 hand: {
                     cards: state.players.opponent.hand.cards.filter((card: CardData) => card.cardIndexInHand !== payload)
+                }
+            }
+        }
+    })),
+    on(HandCardActions.apllyCardEffectToPlayersActivePokemon, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            player: {
+                ...state.players.player,
+                activePokemon: {
+                    ...state.players.player.activePokemon,
+                    [payload.toChange]: state.players.player.activePokemon[payload.toChange] + payload.value
                 }
             }
         }
