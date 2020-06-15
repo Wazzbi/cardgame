@@ -1,6 +1,8 @@
 import { PokeData } from 'src/app/models/pokeData';
 import { createAction, props } from '@ngrx/store';
 
+// AKCE PRO AKTIVNÍ POKEMONY
+
 export const addCardPlayer = createAction(
     '[Card Component] Add Card Player',
     props<{ payload: PokeData }>());

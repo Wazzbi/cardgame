@@ -1,6 +1,8 @@
+import { CardData } from './../models/cardData';
 import { createReducer, on } from '@ngrx/store';
 import * as CardActions from './card.actions';
 import * as GameActions from './game.actions';
+import * as HandCardActions from './hand-card.actions';
 
 export const initialState = {
     game: {
@@ -16,6 +18,9 @@ export const initialState = {
                 speed: null,
                 attack: null,
                 defense: null
+            },
+            hand: {
+                cards: [],
             }
         },
         opponent: {
@@ -24,6 +29,9 @@ export const initialState = {
                 speed: null,
                 attack: null,
                 defense: null
+            },
+            hand: {
+                cards: [],
             }
         }
     }
@@ -48,7 +56,7 @@ const _cardReducer = createReducer(initialState,
         players: {
             ...state.players,
             opponent: {
-                ...state.players.player,
+                ...state.players.opponent,
                 activePokemon: {
                     ...payload
                 }
@@ -76,9 +84,9 @@ const _cardReducer = createReducer(initialState,
         players: {
             ...state.players,
             opponent: {
-                ...state.players.player,
+                ...state.players.opponent,
                 activePokemon: {
-                    ...state.players.player.activePokemon,
+                    ...state.players.opponent.activePokemon,
                     health: null,
                     speed: null,
                     attack: null,
@@ -105,6 +113,60 @@ const _cardReducer = createReducer(initialState,
             }
         }
     })),
+    on(HandCardActions.addCardToPlayesHand, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            player: {
+                ...state.players.player,
+                hand: {
+                    cards: [...state.players.player.hand.cards, {
+                        ...payload,
+                        cardIndexInHand: state.players.player.hand.cards.length
+                    }]
+                }
+            }
+        }
+    })),
+    on(HandCardActions.addCardToOpponentsHand, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            opponent: {
+                ...state.players.opponent,
+                hand: {
+                    cards: [...state.players.opponent.hand.cards, {
+                        ...payload,
+                        cardIndexInHand: state.players.opponent.hand.cards.length
+                    }]
+                }
+            }
+        }
+    })),
+    on(HandCardActions.removeCardFromPlayersHand, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            player: {
+                ...state.players.player,
+                hand: {
+                    cards: state.players.player.hand.cards.filter((card: CardData) => card.cardIndexInHand !== payload)
+                }
+            }
+        }
+    })),
+    on(HandCardActions.removeCardFromOpponentsHand, (state, { payload }) => ({
+        ...state,
+        players: {
+            ...state.players,
+            opponent: {
+                ...state.players.opponent,
+                hand: {
+                    cards: state.players.opponent.hand.cards.filter((card: CardData) => card.cardIndexInHand !== payload)
+                }
+            }
+        }
+    }))
 
 );
 

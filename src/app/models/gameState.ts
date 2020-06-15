@@ -1,10 +1,11 @@
+import { CardData } from './cardData';
 export interface GameState {
     game: {
         score: {
             player: number,
             opponent: number
         }
-    },
+    };
     players: {
         player: {
             activePokemon: {
@@ -12,6 +13,9 @@ export interface GameState {
                 speed: number,
                 attack: number,
                 defense: number
+            };
+            hand: {
+                cards: CardData[],
             }
         },
         opponent: {
@@ -20,7 +24,10 @@ export interface GameState {
                 speed: number,
                 attack: number,
                 defense: number
+            };
+            hand: {
+                cards: CardData[],
             }
         }
-    }
-};
+    };
+}

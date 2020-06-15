@@ -17,6 +17,7 @@ import {
   removeCardPlayer,
   removeCardOpponent,
 } from '../../store/card.actions';
+import { addCardToPlayesHand } from 'src/app/store/hand-card.actions';
 
 @Component({
   selector: 'app-game',
@@ -37,15 +38,19 @@ export class GameComponent implements OnInit, OnDestroy {
   disableButtons: boolean;
   subscription: Subscription;
   subscription2: Subscription;
+  subscription3: Subscription;
 
   constructor(
     public cardService: CardService,
     private store: Store<{ gameState: GameState }>
   ) {
-    store.pipe(select('gameState')).subscribe((res) => (this.gameState = res));
+    this.subscription3 = store.pipe(select('gameState')).subscribe((res) => (this.gameState = res));
   }
 
   ngOnInit() {
+    this.drawCard();
+    this.drawCard();
+    this.drawCard();
     this.play();
   }
 
@@ -110,13 +115,16 @@ export class GameComponent implements OnInit, OnDestroy {
     }, 3000);
   }
 
-  // TODO: mechanika na lízání karet
-  /* drawCard(){
-
-  } */
+  // TODO: mechanika na lízání karet zatím random
+  drawCard(){
+    const cardIndex =  Math.floor(Math.random() * 4) + 1;
+    const card = this.cardService.getCardData(cardIndex);
+    this.store.dispatch(addCardToPlayesHand({ payload: card }));
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.subscription2.unsubscribe();
+    this.subscription3.unsubscribe();
   }
 }

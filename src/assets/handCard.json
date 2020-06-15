@@ -4,5 +4,23 @@
         "effect": "Add +1 to attack",
         "status": "add",
         "value": 1
+    },
+    "2":{
+        "name": "Defense Boost",
+        "effect": "Add +1 to defense",
+        "status": "add",
+        "value": 1
+    },
+    "3":{
+        "name": "Health Boost",
+        "effect": "Add +1 to health",
+        "status": "add",
+        "value": 1
+    },
+    "4":{
+        "name": "Speed Boost",
+        "effect": "Add +1 to speed",
+        "status": "add",
+        "value": 1
     }
 }

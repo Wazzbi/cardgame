@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CardData } from 'src/app/models/cardData';
 
 @Component({
   selector: 'app-hand',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hand.component.scss']
 })
 export class HandComponent implements OnInit {
+  @Input() cards: CardData[];
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
