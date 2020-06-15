@@ -1,0 +1,8 @@
+{
+    "1":{
+        "name": "Attack Boost",
+        "effect": "Add +1 to attack",
+        "status": "add",
+        "value": 1
+    }
+}

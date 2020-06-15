@@ -18,10 +18,10 @@ export class CardService {
 
   constructor(private afStorage: AngularFireStorage, private db: AngularFireDatabase) { }
 
-  uploadImage(name, data) {
-    let promise = new Promise((res, rej) => {
-      let fileName = name + ".jpg";
-      let uploadTask = firebase.storage().ref(`/posts/${fileName}`).put(data);
+  /* uploadImage(name, data) {
+    const promise = new Promise((res, rej) => {
+      const fileName = name + ".jpg";
+      const uploadTask = firebase.storage().ref(`/posts/${fileName}`).put(data);
       uploadTask.on('state_changed', function (snapshot) {
       }, function (error) {
         rej(error);
@@ -31,7 +31,7 @@ export class CardService {
       });
     });
     return promise;
-  }
+  } */
 
   getPokemonImageUrl(pokeNo: number): Observable<string> {
     const storageRef = firebase.storage().ref().child(`images/${pokeNo}.png`);
@@ -39,8 +39,10 @@ export class CardService {
   }
 
   getPokemonData(pokeNo: number): PokeData {
-    return this.pokeDataJs[pokeNo]
+    return this.pokeDataJs[pokeNo];
   }
+
+  // TODO: servisa na výběr karet
 
 }
 

@@ -1,3 +1,4 @@
+import { HandCardComponent } from './compoments/hand-card/hand-card.component';
 import { PlayerHudComponent } from './compoments/player-hud/player-hud.component';
 import { PokemonDetailComponent } from './compoments/pokemon-detail/pokemon-detail.component';
 import { HandComponent } from './compoments/hand/hand.component';
@@ -31,7 +32,9 @@ firebase.initializeApp(environment.firebase);
     GameOverlayComponent,
     HandComponent,
     PokemonDetailComponent,
-    PlayerHudComponent
+    PlayerHudComponent,
+    HandComponent,
+    HandCardComponent
   ],
   imports: [
     BrowserModule,

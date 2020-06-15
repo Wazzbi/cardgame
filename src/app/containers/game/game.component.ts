@@ -87,6 +87,7 @@ export class GameComponent implements OnInit, OnDestroy {
           payload: this.battleAtrributePlayer - this.battleAtrributeOpponent,
         })
       );
+      // TODO: v budoucnu udělat na výběr z balíku
       this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
       this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
     } else if (this.battleAtrributePlayer < this.battleAtrributeOpponent) {
@@ -108,6 +109,11 @@ export class GameComponent implements OnInit, OnDestroy {
       this.play();
     }, 3000);
   }
+
+  // TODO: mechanika na lízání karet
+  /* drawCard(){
+
+  } */
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
