@@ -44,7 +44,9 @@ export class GameComponent implements OnInit, OnDestroy {
     public cardService: CardService,
     private store: Store<{ gameState: GameState }>
   ) {
-    this.subscription3 = store.pipe(select('gameState')).subscribe((res) => (this.gameState = res));
+    this.subscription3 = store
+      .pipe(select('gameState'))
+      .subscribe((res) => (this.gameState = res));
   }
 
   ngOnInit() {
@@ -116,8 +118,8 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   // TODO: mechanika na lízání karet zatím random
-  drawCard(){
-    const cardIndex =  Math.floor(Math.random() * 4) + 1;
+  drawCard() {
+    const cardIndex = Math.floor(Math.random() * 4) + 1;
     const card = this.cardService.getCardData(cardIndex);
     this.store.dispatch(addCardToPlayesHand({ payload: card }));
   }

@@ -9,17 +9,18 @@ import * as pokeDataJson from '../../assets/pokeData.json';
 import * as cardDataJson from '../../assets/handCard.json';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class CardService {
-
   private pokeDataJs: any = (pokeDataJson as any).default;
   private cardDataJs: any = (cardDataJson as any).default;
   /* private basePath = '/images';
   private fileUploads: AngularFireList<any[]>; */
 
-  constructor(private afStorage: AngularFireStorage, private db: AngularFireDatabase) { }
+  constructor(
+    private afStorage: AngularFireStorage,
+    private db: AngularFireDatabase
+  ) {}
 
   /* uploadImage(name, data) {
     const promise = new Promise((res, rej) => {
@@ -45,9 +46,12 @@ export class CardService {
     return this.pokeDataJs[pokeNo];
   }
 
+  getItemImageUrl(itemName: string): Observable<string> {
+    const storageRef = firebase.storage().ref().child(`items/${itemName}.png`);
+    return from(storageRef.getDownloadURL());
+  }
+
   getCardData(cardIndex: number): CardData {
     return this.cardDataJs[cardIndex];
   }
-
 }
-

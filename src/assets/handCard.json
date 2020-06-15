@@ -1,34 +1,34 @@
 {
-    "1":{
-        "name": "Attack Boost",
-        "effect": "Add +1 to attack",
-        "status": "add",
-        "toChange": "attack",
-        "value": 1,
-        "apllyTo": ["player", "activePokemon"]
-    },
-    "2":{
-        "name": "Defense Boost",
-        "effect": "Add +1 to defense",
-        "status": "add",
-        "toChange": "defense",
-        "value": 1,
-        "apllyTo": ["player", "activePokemon"]
-    },
-    "3":{
-        "name": "Health Boost",
-        "effect": "Add +1 to health",
-        "status": "add",
-        "toChange": "health",
-        "value": 1,
-        "apllyTo": ["player", "activePokemon"]
-    },
-    "4":{
-        "name": "Speed Boost",
-        "effect": "Add +1 to speed",
-        "status": "add",
-        "toChange": "speed",
-        "value": 1,
-        "apllyTo": ["player", "activePokemon"]
-    }
+  "1": {
+    "name": "x-attack",
+    "effect": "Add +1 to attack",
+    "status": "add",
+    "toChange": "attack",
+    "value": 1,
+    "apllyTo": ["player", "activePokemon"]
+  },
+  "2": {
+    "name": "x-defense",
+    "effect": "Add +1 to defense",
+    "status": "add",
+    "toChange": "defense",
+    "value": 1,
+    "apllyTo": ["player", "activePokemon"]
+  },
+  "3": {
+    "name": "hp-up",
+    "effect": "Add +1 to health",
+    "status": "add",
+    "toChange": "health",
+    "value": 1,
+    "apllyTo": ["player", "activePokemon"]
+  },
+  "4": {
+    "name": "x-speed",
+    "effect": "Add +1 to speed",
+    "status": "add",
+    "toChange": "speed",
+    "value": 1,
+    "apllyTo": ["player", "activePokemon"]
+  }
 }
