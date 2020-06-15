@@ -31,7 +31,8 @@ export class HandCardComponent implements OnInit, OnDestroy {
       .subscribe((x) => ((this.itemImageUrl = x), console.log(x)));
   }
 
-  // TODO: url karty nařítat ze storu nebo jinak dostat odtud do smart komponenty
+  // TODO: placeholder za item background-image
+  // TODO: url image karty načítat ze storu nebo jinak dostat odtud do smart komponenty
   // TODO: emit smazat kartu po zahrání
 
   ngOnDestroy(): void {
