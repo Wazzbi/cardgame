@@ -6,10 +6,11 @@ import { GameState } from 'src/app/models/gameState';
 import { Subscription } from 'rxjs';
 import { apllyCardEffectToPlayersActivePokemon } from 'src/app/store/hand-card.actions';
 
+// TODO: lepší layout html bez position:absolute a tak
 @Component({
   selector: 'app-game-overlay',
   templateUrl: './game-overlay.component.html',
-  styleUrls: ['./game-overlay.component.scss']
+  styleUrls: ['./game-overlay.component.scss'],
 })
 export class GameOverlayComponent implements OnInit, OnDestroy {
   gameState: GameState;
@@ -19,20 +20,22 @@ export class GameOverlayComponent implements OnInit, OnDestroy {
     public cardService: CardService,
     private store: Store<{ gameState: GameState }>
   ) {
-    this.subscription = store.pipe(select('gameState')).subscribe((res) => (this.gameState = res));
+    this.subscription = store
+      .pipe(select('gameState'))
+      .subscribe((res) => (this.gameState = res));
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // TODO: po odehrání kartu odebrat z ruky. akce je připravená
-  playedCard(card: CardData){
+  playedCard(card: CardData) {
     console.log('emit dorazil', card);
-    this.store.dispatch(apllyCardEffectToPlayersActivePokemon({ payload: card }));
+    this.store.dispatch(
+      apllyCardEffectToPlayersActivePokemon({ payload: card })
+    );
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }
