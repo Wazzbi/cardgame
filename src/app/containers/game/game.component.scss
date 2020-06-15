@@ -63,8 +63,13 @@
   position: absolute;
   top: 100px;
   left: 155px;
+  animation: fadeinout 1.5s infinite forwards;
   img {
     width: 50px;
     height: 50px;
   }
+}
+@keyframes fadeinout {
+  0%,100% { opacity: 0.1; }
+  50% { opacity: 1; }
 }

@@ -1,3 +1,7 @@
+import { PlayerHudComponent } from './compoments/player-hud/player-hud.component';
+import { PokemonDetailComponent } from './compoments/pokemon-detail/pokemon-detail.component';
+import { HandComponent } from './compoments/hand/hand.component';
+import { GameOverlayComponent } from './containers/game-overlay/game-overlay.component';
 import { CardService } from './services/card-service.service';
 import { AuthService } from './services/auth-service.service';
 import { NgModule } from '@angular/core';
@@ -23,13 +27,16 @@ firebase.initializeApp(environment.firebase);
   declarations: [
     AppComponent,
     GameComponent,
-    CardComponent
+    CardComponent,
+    GameOverlayComponent,
+    HandComponent,
+    PokemonDetailComponent,
+    PlayerHudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     AngularFireModule.initializeApp(environment.firebase, 'letslearn-dev'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

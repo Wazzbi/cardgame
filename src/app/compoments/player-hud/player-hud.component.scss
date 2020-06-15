@@ -1,0 +1,14 @@
+.player-hud{
+    width: calc(50% - 30px);
+    height: 120px;
+    border: 1px solid red;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.player{
+    position: absolute;
+    top: 0;
+    left: 0;
+}

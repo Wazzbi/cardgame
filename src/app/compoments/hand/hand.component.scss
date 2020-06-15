@@ -1,0 +1,8 @@
+.hand{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 20px - 2px);
+    height: 120px;
+    border: 1px solid red;
+    padding: 10px;
+}
