@@ -9,6 +9,7 @@ import {
   EventEmitter,
   OnChanges,
   OnDestroy,
+  ChangeDetectorRef,
 } from '@angular/core';
 
 @Component({
@@ -23,12 +24,15 @@ export class HandCardComponent implements OnInit, OnDestroy {
   itemImageUrl: string;
   subscription: Subscription;
 
-  constructor(public cardService: CardService) {}
+  constructor(public cardService: CardService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.subscription = this.cardService
       .getItemImageUrl(this.card.name)
-      .subscribe((x) => ((this.itemImageUrl = x), console.log(x)));
+      .subscribe((x) => {
+        this.itemImageUrl = x;
+        this.cdr.detectChanges();
+      });
   }
 
   // TODO: placeholder za item background-image

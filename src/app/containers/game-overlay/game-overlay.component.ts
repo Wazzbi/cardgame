@@ -4,7 +4,7 @@ import { CardService } from 'src/app/services/card-service.service';
 import { Store, select } from '@ngrx/store';
 import { GameState } from 'src/app/models/gameState';
 import { Subscription } from 'rxjs';
-import { apllyCardEffectToPlayersActivePokemon } from 'src/app/store/hand-card.actions';
+import { apllyCardEffectToPlayersActivePokemon, removeCardFromPlayersHand } from 'src/app/store/hand-card.actions';
 
 // TODO: lepší layout html bez position:absolute a tak
 @Component({
@@ -31,6 +31,9 @@ export class GameOverlayComponent implements OnInit, OnDestroy {
   playedCard(card: CardData) {
     this.store.dispatch(
       apllyCardEffectToPlayersActivePokemon({ payload: card })
+    );
+    this.store.dispatch(
+      removeCardFromPlayersHand({ payload: card.cardIndexInHand })
     );
   }
 
