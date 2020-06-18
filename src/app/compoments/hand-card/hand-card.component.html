@@ -1,9 +1,11 @@
 <button class="hand-card" (click)="playedCard.emit(card)">
-  <b>{{ card.name }}</b>
-    <div class="image">
-      <img [src]="itemImageUrl" alt="" />
-    </div>
-    <span>
+  <div class="header">
+    <b>{{ card.name }}</b>
+  </div>
+  <div class="image">
+    <img [src]="itemImageUrl" alt="" />
+  </div>
+  <div class="text">
       {{ card.effect }}
-    </span>
+  </div>
 </button>
