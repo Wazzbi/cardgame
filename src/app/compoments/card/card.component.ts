@@ -7,7 +7,7 @@ import { EventEmitter } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnChanges{
+export class CardComponent implements OnInit, OnChanges{
   @Input() pokeUrl: string;
   @Input() pokeData: PokeData;
   @Input() firstPlayer: boolean;
@@ -20,6 +20,9 @@ export class CardComponent implements OnChanges{
   speedStatChanged = 'default';
 
   constructor(private cdr: ChangeDetectorRef) {}
+  ngOnInit(): void {
+    console.log(this.pokeData);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     // TODO: [chyba] pří načítání prvního pokémona se někdy nenačte - když na něco kliknu - načte se

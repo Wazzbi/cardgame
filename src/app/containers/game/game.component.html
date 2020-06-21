@@ -7,7 +7,6 @@
     <!-- aktivní pokémon hráče -->
     <div class="player-ground">
       <app-card
-        [pokeUrl]="pokeNo_1_url"
         [pokeData]="gameState.players.player.activePokemon"
         [firstPlayer]="true"
         [disableButtons]="disableButtons"
@@ -40,7 +39,6 @@
       </ng-container>
       <ng-template #showPokemon>
         <app-card
-          [pokeUrl]="pokeNo_2_url"
           [pokeData]="gameState.players.opponent.activePokemon"
           [firstPlayer]="false"
         >

@@ -1,4 +1,3 @@
-import { PokeData } from 'src/app/models/pokeData';
 import { CardData } from './../models/cardData';
 import { createReducer, on } from '@ngrx/store';
 import * as CardActions from './card.actions';
@@ -24,6 +23,9 @@ export const initialState = {
                     speed: null,
                     attack: null,
                     defense: null
+                },
+                images: {
+                    pokemonGif: null
                 }
             },
             hand: {
@@ -41,6 +43,9 @@ export const initialState = {
                     speed: null,
                     attack: null,
                     defense: null
+                },
+                images: {
+                    animated: null
                 }
             },
             hand: {
@@ -60,7 +65,11 @@ const _cardReducer = createReducer(initialState,
                 ...state.players.player,
                 activePokemon: {
                     ...payload,
-                    originStats: {...payload}
+                    originStats: {...payload},
+                    images: {
+                        ...state.players.player.activePokemon.images,
+                        pokemonGif: payload.pokemonGif
+                    }
                 }
             }
         }
@@ -73,7 +82,11 @@ const _cardReducer = createReducer(initialState,
                 ...state.players.opponent,
                 activePokemon: {
                     ...payload,
-                    originStats: {...payload}
+                    originStats: {...payload},
+                    images: {
+                        ...state.players.opponent.activePokemon.images,
+                        pokemonGif: payload.pokemonGif
+                    }
                 }
             }
         }

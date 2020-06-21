@@ -27,8 +27,6 @@ import { addCardToPlayesHand } from 'src/app/store/hand-card.actions';
 export class GameComponent implements OnInit, OnDestroy {
   pokeNo_1: number;
   pokeNo_2: number;
-  pokeNo_1_url: string;
-  pokeNo_2_url: string;
   pokeNo_1_data: PokeData;
   pokeNo_2_data: PokeData;
   gameState: GameState;
@@ -54,6 +52,7 @@ export class GameComponent implements OnInit, OnDestroy {
     this.drawCard();
     this.drawCard();
     this.play();
+    console.log(this.pokeNo_1_data);
   }
 
   play() {
@@ -62,17 +61,9 @@ export class GameComponent implements OnInit, OnDestroy {
     this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
     this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
 
-    this.subscription = this.cardService
-      .getPokemonImageUrl(this.pokeNo_1)
-      .subscribe((url) => (this.pokeNo_1_url = url));
     this.pokeNo_1_data = this.cardService.getPokemonData(this.pokeNo_1);
     this.store.dispatch(addCardPlayer({ payload: this.pokeNo_1_data }));
 
-    this.subscription2 = this.cardService
-      .getPokemonImageUrl(this.pokeNo_2)
-      .subscribe((url) => {
-        this.pokeNo_2_url = url;
-      });
     this.pokeNo_2_data = this.cardService.getPokemonData(this.pokeNo_2);
     this.store.dispatch(addCardOpponent({ payload: this.pokeNo_2_data }));
   }

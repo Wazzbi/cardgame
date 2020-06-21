@@ -3,54 +3,63 @@
         "health": 1,
         "attack": 1,
         "speed": 1,
-        "defense": 1
+        "defense": 1,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
     },
     "2": {
         "health": 2,
         "attack": 2,
         "speed": 2,
-        "defense": 2
+        "defense": 2,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif"
     },
     "3": {
         "health": 3,
         "attack": 3,
         "speed": 3,
-        "defense": 3
+        "defense": 3,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur-f.gif"
     },
     "4": {
         "health": 4,
         "attack": 4,
         "speed": 4,
-        "defense": 4
+        "defense": 4,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif"
     },
     "5": {
         "health": 5,
         "attack": 5,
         "speed": 5,
-        "defense": 5
+        "defense": 5,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif"
     },
     "6": {
         "health": 6,
         "attack": 6,
         "speed": 6,
-        "defense": 6
+        "defense": 6,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif"
     },
     "7": {
         "health": 7,
         "attack": 7,
         "speed": 7,
-        "defense": 7
+        "defense": 7,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif"
     },
     "8": {
         "health": 8,
         "attack": 8,
         "speed": 8,
-        "defense": 8
+        "defense": 8,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif"
     },
     "9": {
         "health": 9,
         "attack": 9,
         "speed": 9,
-        "defense": 9
+        "defense": 9,
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif"
     }
 }
