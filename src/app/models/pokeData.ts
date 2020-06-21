@@ -3,4 +3,5 @@ export interface PokeData {
     attack: number;
     speed: number;
     defense: number;
+    originStats: PokeData;
 }

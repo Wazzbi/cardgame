@@ -14,10 +14,43 @@ export class CardComponent implements OnChanges{
   @Input() disableButtons: boolean;
   @Output() battleAtrr: EventEmitter<string> = new EventEmitter();
 
+  attackStatChanged = 'default';
+  defenseStatChanged = 'default';
+  healthStatChanged = 'default';
+  speedStatChanged = 'default';
+
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    // TODO: težko říct jestli to funguje takhle tady -otestovat časem
+    // TODO: [chyba] pří načítání prvního pokémona se někdy nenačte - když na něco kliknu - načte se
+    this.attackStatChanged =
+      this.pokeData.attack === this.pokeData.originStats.attack
+        ? this.attackStatChanged = 'default'
+        : this.pokeData.attack > this.pokeData.originStats.attack
+          ? 'increased'
+          : 'decreased';
+
+    this.defenseStatChanged =
+      this.pokeData.defense === this.pokeData.originStats.defense
+        ? this.defenseStatChanged = 'default'
+        : this.pokeData.defense > this.pokeData.originStats.defense
+          ? 'increased'
+          : 'decreased';
+
+    this.healthStatChanged =
+      this.pokeData.health === this.pokeData.originStats.health
+        ? this.healthStatChanged = 'default'
+        : this.pokeData.health > this.pokeData.originStats.health
+          ? 'increased'
+          : 'decreased';
+
+    this.speedStatChanged =
+      this.pokeData.speed === this.pokeData.originStats.speed
+        ? this.speedStatChanged = 'default'
+        : this.pokeData.speed > this.pokeData.originStats.speed
+          ? 'increased'
+          : 'decreased';
+
     this.cdr.detectChanges();
   }
 

@@ -18,7 +18,13 @@ export const initialState = {
                 health: null,
                 speed: null,
                 attack: null,
-                defense: null
+                defense: null,
+                originStats: {
+                    health: null,
+                    speed: null,
+                    attack: null,
+                    defense: null
+                }
             },
             hand: {
                 cards: [],
@@ -29,7 +35,13 @@ export const initialState = {
                 health: null,
                 speed: null,
                 attack: null,
-                defense: null
+                defense: null,
+                originStats: {
+                    health: null,
+                    speed: null,
+                    attack: null,
+                    defense: null
+                }
             },
             hand: {
                 cards: [],
@@ -47,7 +59,8 @@ const _cardReducer = createReducer(initialState,
             player: {
                 ...state.players.player,
                 activePokemon: {
-                    ...payload
+                    ...payload,
+                    originStats: {...payload}
                 }
             }
         }
@@ -59,7 +72,8 @@ const _cardReducer = createReducer(initialState,
             opponent: {
                 ...state.players.opponent,
                 activePokemon: {
-                    ...payload
+                    ...payload,
+                    originStats: {...payload}
                 }
             }
         }

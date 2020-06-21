@@ -6,6 +6,7 @@
   <div>
     <button
       mat-flat-button
+      [class]="healthStatChanged"
       [disableRipple]="!firstPlayer"
       [disabled]="disableButtons"
       (click)="battle('health')"
@@ -13,6 +14,7 @@
       Health: {{ pokeData.health }}
     </button>
     <button
+      [class] = "speedStatChanged"
       mat-flat-button
       [disableRipple]="!firstPlayer"
       [disabled]="disableButtons"
@@ -21,6 +23,7 @@
       Speed: {{ pokeData.speed }}
     </button>
     <button
+      [class] = "attackStatChanged"
       mat-flat-button
       [disableRipple]="!firstPlayer"
       [disabled]="disableButtons"
@@ -29,6 +32,7 @@
       Attack: {{ pokeData.attack }}
     </button>
     <button
+      [class] = "defenseStatChanged"
       mat-flat-button
       [disableRipple]="!firstPlayer"
       [disabled]="disableButtons"

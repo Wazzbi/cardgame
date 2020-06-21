@@ -8,6 +8,19 @@
   .mat-flat-button {
     margin: 2px;
     background-color: rgba(255, 255, 255, 0.322);
+    cursor: pointer;
+
+    &.default {
+      color: black;
+    }
+    &.increased {
+      color: rgb(40, 172, 40);
+      animation: pulsate 1s ease-in-out;
+    }
+    &.decreased {
+      color: red;
+      animation: pulsate 1s ease-in-out;
+    }
   }
 
   button {
@@ -27,15 +40,6 @@
   img {
     transform: scaleX(-1);
   }
-
-  @media (hover: hover) {
-    button {
-      &:hover {
-        color: red;
-        cursor: pointer;
-      }
-    }
-  }
 }
 .pokemon-image {
   margin: 0 auto;
@@ -45,5 +49,17 @@
     text-align: center;
     width: 144px;
     height: auto;
+  }
+}
+
+@keyframes pulsate {
+  0% { 
+      transform: scale(1);
+  }
+  50% { 
+      transform: scale(1.2);
+  }
+  100% { 
+    transform: scale(1);
   }
 }
