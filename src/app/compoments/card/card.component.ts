@@ -23,6 +23,7 @@ export class CardComponent implements OnChanges{
 
   ngOnChanges(changes: SimpleChanges): void {
     // TODO: [chyba] pří načítání prvního pokémona se někdy nenačte - když na něco kliknu - načte se
+    // TODO: animace pro změnu stat se aktivuje jen poprvé, což je škoda
     this.attackStatChanged =
       this.pokeData.attack === this.pokeData.originStats.attack
         ? this.attackStatChanged = 'default'

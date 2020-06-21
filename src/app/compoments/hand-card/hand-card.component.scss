@@ -6,11 +6,12 @@
   height: 105px;
   margin: 0 5px 0 5px;
   padding: 5px;
-  border: 3px solid rgb(0, 0, 0);
+  border: 5px solid rgb(43, 23, 226);
   border-radius: 5px;
   user-select: none;
   cursor: pointer;
-  background-color: whitesmoke;
+  background-image: url(../../../assets/img/steel.jpg);
+  background-size: cover;
 
   .header {
     width: 100%;
