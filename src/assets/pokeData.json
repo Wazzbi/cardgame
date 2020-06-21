@@ -4,62 +4,71 @@
         "attack": 1,
         "speed": 1,
         "defense": 1,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/bulbasaur.png"
     },
     "2": {
         "health": 2,
         "attack": 2,
         "speed": 2,
         "defense": 2,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/ivysaur.png"
     },
     "3": {
         "health": 3,
         "attack": 3,
         "speed": 3,
         "defense": 3,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur-f.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur-f.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/venusaur-f.png"
     },
     "4": {
         "health": 4,
         "attack": 4,
         "speed": 4,
         "defense": 4,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/charmander.png"
     },
     "5": {
         "health": 5,
         "attack": 5,
         "speed": 5,
         "defense": 5,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/charmeleon.png"
     },
     "6": {
         "health": 6,
         "attack": 6,
         "speed": 6,
         "defense": 6,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/charizard.png"
     },
     "7": {
         "health": 7,
         "attack": 7,
         "speed": 7,
         "defense": 7,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/squirtle.png"
     },
     "8": {
         "health": 8,
         "attack": 8,
         "speed": 8,
         "defense": 8,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/wartortle.png"
     },
     "9": {
         "health": 9,
         "attack": 9,
         "speed": 9,
         "defense": 9,
-        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif"
+        "pokemonGif": "https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif",
+        "pokemonImg": "https://img.pokemondb.net/sprites/home/normal/blastoise.png"
     }
 }

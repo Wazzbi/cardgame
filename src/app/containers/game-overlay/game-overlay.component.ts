@@ -1,5 +1,6 @@
+import { PokeData } from 'src/app/models/pokeData';
 import { CardData } from './../../models/cardData';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { CardService } from 'src/app/services/card-service.service';
 import { Store, select } from '@ngrx/store';
 import { GameState } from 'src/app/models/gameState';
@@ -12,9 +13,13 @@ import { apllyCardEffectToPlayersActivePokemon, removeCardFromPlayersHand } from
   templateUrl: './game-overlay.component.html',
   styleUrls: ['./game-overlay.component.scss'],
 })
-export class GameOverlayComponent implements OnInit, OnDestroy {
+export class GameOverlayComponent implements OnDestroy {
   gameState: GameState;
   subscription: Subscription;
+  playerPokemonImgUrl: string;
+  opponentPokemonImgUrl: string;
+
+  waitingForPlayerActionEmitter: boolean;
 
   constructor(
     public cardService: CardService,
@@ -25,7 +30,9 @@ export class GameOverlayComponent implements OnInit, OnDestroy {
       .subscribe((res) => (this.gameState = res));
   }
 
-  ngOnInit() {}
+  getWaitingForPlayerEmitter(result: boolean) {
+    this.waitingForPlayerActionEmitter = result;
+  }
 
   // TODO: po odehrání kartu odebrat z ruky. akce je připravená
   playedCard(card: CardData) {

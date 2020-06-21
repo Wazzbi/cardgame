@@ -21,7 +21,7 @@ export class CardComponent implements OnInit, OnChanges{
 
   constructor(private cdr: ChangeDetectorRef) {}
   ngOnInit(): void {
-    console.log(this.pokeData);
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
