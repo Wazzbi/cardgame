@@ -5,4 +5,5 @@ export interface PokeData {
     defense: number;
     originStats: PokeData;
     pokemonGif: string;
+    pokemonImg: string;
 }

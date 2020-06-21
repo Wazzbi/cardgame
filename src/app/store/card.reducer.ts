@@ -25,7 +25,8 @@ export const initialState = {
                     defense: null
                 },
                 images: {
-                    pokemonGif: null
+                    pokemonGif: null,
+                    pokemonImg: null
                 }
             },
             hand: {
@@ -45,7 +46,8 @@ export const initialState = {
                     defense: null
                 },
                 images: {
-                    animated: null
+                    animated: null,
+                    pokemonImg: null
                 }
             },
             hand: {
@@ -68,7 +70,8 @@ const _cardReducer = createReducer(initialState,
                     originStats: {...payload},
                     images: {
                         ...state.players.player.activePokemon.images,
-                        pokemonGif: payload.pokemonGif
+                        pokemonGif: payload.pokemonGif,
+                        pokemonImg: payload.pokemonImg
                     }
                 }
             }
@@ -85,7 +88,8 @@ const _cardReducer = createReducer(initialState,
                     originStats: {...payload},
                     images: {
                         ...state.players.opponent.activePokemon.images,
-                        pokemonGif: payload.pokemonGif
+                        pokemonGif: payload.pokemonGif,
+                        pokemonImg: payload.pokemonImg
                     }
                 }
             }

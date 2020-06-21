@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, Output, EventEmitter } from '@angular/core';
 import { CardService } from 'src/app/services/card-service.service';
 import { from, Observable, Subscription } from 'rxjs';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
@@ -38,6 +38,8 @@ export class GameComponent implements OnInit, OnDestroy {
   subscription2: Subscription;
   subscription3: Subscription;
 
+  @Output() waitingForPlayerActionEmitter: EventEmitter<boolean> = new EventEmitter();
+
   constructor(
     public cardService: CardService,
     private store: Store<{ gameState: GameState }>
@@ -52,11 +54,11 @@ export class GameComponent implements OnInit, OnDestroy {
     this.drawCard();
     this.drawCard();
     this.play();
-    console.log(this.pokeNo_1_data);
   }
 
   play() {
     this.waitingForPlayerAction = true;
+    this.waitingForPlayerActionEmitter.emit(this.waitingForPlayerAction);
     this.disableButtons = false;
     this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
     this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
@@ -70,6 +72,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   battle(battleAtrr: string) {
     this.waitingForPlayerAction = false;
+    this.waitingForPlayerActionEmitter.emit(this.waitingForPlayerAction);
     this.disableButtons = true;
 
     this.battleAtrributePlayer = this.gameState.players.player.activePokemon[
