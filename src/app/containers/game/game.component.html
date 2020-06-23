@@ -7,7 +7,7 @@
     <!-- aktivní pokémon hráče -->
     <div class="player-ground">
       <app-card
-        [pokeData]="gameState.players.player.activePokemon"
+        [gamePokeData]="gameState.players.player.activePokemon"
         [firstPlayer]="true"
         [disableButtons]="disableButtons"
         (battleAtrr)="battle($event)"
@@ -39,7 +39,7 @@
       </ng-container>
       <ng-template #showPokemon>
         <app-card
-          [pokeData]="gameState.players.opponent.activePokemon"
+          [gamePokeData]="gameState.players.opponent.activePokemon"
           [firstPlayer]="false"
         >
         </app-card>

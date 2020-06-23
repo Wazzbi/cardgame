@@ -1,4 +1,3 @@
-import { PokeData } from 'src/app/models/pokeData';
 import { createAction, props } from '@ngrx/store';
 
 export const increaseScorePlayer = createAction(

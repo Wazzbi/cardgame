@@ -5,5 +5,4 @@ export interface PokeData {
     defense: number;
     pokemonGif: string;
     pokemonImg: string;
-    originStats?: PokeData; // toto nejsou vstupní data z json
 }

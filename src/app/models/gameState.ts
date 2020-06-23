@@ -1,5 +1,5 @@
-import { PokeData } from 'src/app/models/pokeData';
 import { CardData } from './cardData';
+import { GamePokeData } from './gamePokeData';
 export interface GameState {
     game: {
         score: {
@@ -9,13 +9,13 @@ export interface GameState {
     };
     players: {
         player: {
-            activePokemon: PokeData;
+            activePokemon: GamePokeData;
             hand: {
                 cards: CardData[],
             }
         },
         opponent: {
-            activePokemon: PokeData;
+            activePokemon: GamePokeData;
             hand: {
                 cards: CardData[],
             }

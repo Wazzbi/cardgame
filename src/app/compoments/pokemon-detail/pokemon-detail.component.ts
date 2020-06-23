@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
-import { PokeData } from 'src/app/models/pokeData';
+import { Component, Input } from '@angular/core';
+import { GamePokeData } from 'src/app/models/gamePokeData';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -8,7 +8,7 @@ import { PokeData } from 'src/app/models/pokeData';
 })
 export class PokemonDetailComponent {
   @Input() positionPlayer: boolean;
-  @Input() pokeData: PokeData;
+  @Input() gamePokeData: GamePokeData;
   @Input() waitingForPlayerActionEmitter: boolean;
 
 

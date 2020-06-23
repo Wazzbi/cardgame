@@ -1,6 +1,6 @@
 <div class="player" [class.first]="firstPlayer" [class.second]="!firstPlayer">
   <div class="pokemon-image">
-    <img [src]="pokeData.pokemonGif" />
+    <img [src]="gamePokeData.images.pokemonGif" />
   </div>
 
   <div>
@@ -11,7 +11,7 @@
       [disabled]="disableButtons"
       (click)="battle('health')"
     >
-      Health: {{ pokeData.health }}
+      Health: {{ gamePokeData.health }}
     </button>
     <button
       [class] = "speedStatChanged"
@@ -20,7 +20,7 @@
       [disabled]="disableButtons"
       (click)="battle('speed')"
     >
-      Speed: {{ pokeData.speed }}
+      Speed: {{ gamePokeData.speed }}
     </button>
     <button
       [class] = "attackStatChanged"
@@ -29,7 +29,7 @@
       [disabled]="disableButtons"
       (click)="battle('attack')"
     >
-      Attack: {{ pokeData.attack }}
+      Attack: {{ gamePokeData.attack }}
     </button>
     <button
       [class] = "defenseStatChanged"
@@ -38,7 +38,7 @@
       [disabled]="disableButtons"
       (click)="battle('defense')"
     >
-      Defense: {{ pokeData.defense }}
+      Defense: {{ gamePokeData.defense }}
     </button>
   </div>
 </div>

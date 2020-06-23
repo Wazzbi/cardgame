@@ -1,6 +1,6 @@
 import { Component, Input, Output, ChangeDetectorRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { PokeData } from 'src/app/models/pokeData';
 import { EventEmitter } from '@angular/core';
+import { GamePokeData } from 'src/app/models/gamePokeData';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +9,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class CardComponent implements OnInit, OnChanges{
   @Input() pokeUrl: string;
-  @Input() pokeData: PokeData;
+  @Input() gamePokeData: GamePokeData;
   @Input() firstPlayer: boolean;
   @Input() disableButtons: boolean;
   @Output() battleAtrr: EventEmitter<string> = new EventEmitter();
@@ -28,30 +28,30 @@ export class CardComponent implements OnInit, OnChanges{
     // TODO: [chyba] pří načítání prvního pokémona se někdy nenačte - když na něco kliknu - načte se
     // TODO: animace pro změnu stat se aktivuje jen poprvé, což je škoda
     this.attackStatChanged =
-      this.pokeData.attack === this.pokeData.originStats.attack
+      this.gamePokeData.attack === this.gamePokeData.originStats.attack
         ? this.attackStatChanged = 'default'
-        : this.pokeData.attack > this.pokeData.originStats.attack
+        : this.gamePokeData.attack > this.gamePokeData.originStats.attack
           ? 'increased'
           : 'decreased';
 
     this.defenseStatChanged =
-      this.pokeData.defense === this.pokeData.originStats.defense
+      this.gamePokeData.defense === this.gamePokeData.originStats.defense
         ? this.defenseStatChanged = 'default'
-        : this.pokeData.defense > this.pokeData.originStats.defense
+        : this.gamePokeData.defense > this.gamePokeData.originStats.defense
           ? 'increased'
           : 'decreased';
 
     this.healthStatChanged =
-      this.pokeData.health === this.pokeData.originStats.health
+      this.gamePokeData.health === this.gamePokeData.originStats.health
         ? this.healthStatChanged = 'default'
-        : this.pokeData.health > this.pokeData.originStats.health
+        : this.gamePokeData.health > this.gamePokeData.originStats.health
           ? 'increased'
           : 'decreased';
 
     this.speedStatChanged =
-      this.pokeData.speed === this.pokeData.originStats.speed
+      this.gamePokeData.speed === this.gamePokeData.originStats.speed
         ? this.speedStatChanged = 'default'
-        : this.pokeData.speed > this.pokeData.originStats.speed
+        : this.gamePokeData.speed > this.gamePokeData.originStats.speed
           ? 'increased'
           : 'decreased';
 

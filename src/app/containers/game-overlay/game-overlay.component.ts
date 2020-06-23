@@ -1,6 +1,5 @@
-import { PokeData } from 'src/app/models/pokeData';
 import { CardData } from './../../models/cardData';
-import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { CardService } from 'src/app/services/card-service.service';
 import { Store, select } from '@ngrx/store';
 import { GameState } from 'src/app/models/gameState';

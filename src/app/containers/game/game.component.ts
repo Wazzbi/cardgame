@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { CardService } from 'src/app/services/card-service.service';
-import { from, Observable, Subscription } from 'rxjs';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { GameState } from 'src/app/models/gameState';
 import {
@@ -9,13 +8,10 @@ import {
   increaseScoreOpponent,
   split,
 } from '../../store/game.actions';
-import { map } from 'rxjs/operators';
 import { PokeData } from 'src/app/models/pokeData';
 import {
   addCardPlayer,
   addCardOpponent,
-  removeCardPlayer,
-  removeCardOpponent,
 } from '../../store/card.actions';
 import { addCardToPlayesHand } from 'src/app/store/hand-card.actions';
 
@@ -63,9 +59,11 @@ export class GameComponent implements OnInit, OnDestroy {
     this.pokeNo_1 = Math.floor(Math.random() * 9) + 1;
     this.pokeNo_2 = Math.floor(Math.random() * 9) + 1;
 
+    // získat raw data pokemona z json
     this.pokeNo_1_data = this.cardService.getPokemonData(this.pokeNo_1);
     this.store.dispatch(addCardPlayer({ payload: this.pokeNo_1_data }));
 
+    // získat raw data pokemona z json
     this.pokeNo_2_data = this.cardService.getPokemonData(this.pokeNo_2);
     this.store.dispatch(addCardOpponent({ payload: this.pokeNo_2_data }));
   }
