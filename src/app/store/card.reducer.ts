@@ -61,7 +61,6 @@ export const initialState = {
     }
 };
 
-// TODO: ukládat i obrázky (aspoň url)
 const _cardReducer = createReducer(initialState,
     on(CardActions.addCardPlayer, (state, { payload }) => ({
         ...state,
