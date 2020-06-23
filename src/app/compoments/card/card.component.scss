@@ -16,10 +16,24 @@
     &.increased {
       color: rgb(40, 172, 40);
       animation: pulsate 1s ease-in-out;
+      &:disabled {
+        color: rgb(40, 172, 40);
+        &:hover {
+          color: rgb(40, 172, 40);
+          cursor: default;
+        }
+      }
     }
     &.decreased {
       color: red;
       animation: pulsate 1s ease-in-out;
+      &:disabled {
+        color: red;
+        &:hover {
+          color: red;
+          cursor: default;
+        }
+      }
     }
   }
 

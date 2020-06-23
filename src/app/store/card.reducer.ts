@@ -18,16 +18,14 @@ export const initialState = {
                 speed: null,
                 attack: null,
                 defense: null,
+                pokemonGif: null,
+                pokemonImg: null,
                 originStats: {
                     health: null,
                     speed: null,
                     attack: null,
                     defense: null
                 },
-                images: {
-                    pokemonGif: null,
-                    pokemonImg: null
-                }
             },
             hand: {
                 cards: [],
@@ -39,16 +37,14 @@ export const initialState = {
                 speed: null,
                 attack: null,
                 defense: null,
+                pokemonGif: null,
+                pokemonImg: null,
                 originStats: {
                     health: null,
                     speed: null,
                     attack: null,
                     defense: null
                 },
-                images: {
-                    animated: null,
-                    pokemonImg: null
-                }
             },
             hand: {
                 cards: [],
@@ -67,12 +63,7 @@ const _cardReducer = createReducer(initialState,
                 ...state.players.player,
                 activePokemon: {
                     ...payload,
-                    originStats: {...payload},
-                    images: {
-                        ...state.players.player.activePokemon.images,
-                        pokemonGif: payload.pokemonGif,
-                        pokemonImg: payload.pokemonImg
-                    }
+                    originStats: {...payload}
                 }
             }
         }
@@ -85,12 +76,7 @@ const _cardReducer = createReducer(initialState,
                 ...state.players.opponent,
                 activePokemon: {
                     ...payload,
-                    originStats: {...payload},
-                    images: {
-                        ...state.players.opponent.activePokemon.images,
-                        pokemonGif: payload.pokemonGif,
-                        pokemonImg: payload.pokemonImg
-                    }
+                    originStats: {...payload}
                 }
             }
         }

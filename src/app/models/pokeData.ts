@@ -3,7 +3,7 @@ export interface PokeData {
     attack: number;
     speed: number;
     defense: number;
-    originStats: PokeData;
     pokemonGif: string;
     pokemonImg: string;
+    originStats?: PokeData; // toto nejsou vstupní data z json
 }

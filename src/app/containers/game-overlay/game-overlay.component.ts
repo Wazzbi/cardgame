@@ -16,8 +16,6 @@ import { apllyCardEffectToPlayersActivePokemon, removeCardFromPlayersHand } from
 export class GameOverlayComponent implements OnDestroy {
   gameState: GameState;
   subscription: Subscription;
-  playerPokemonImgUrl: string;
-  opponentPokemonImgUrl: string;
 
   waitingForPlayerActionEmitter: boolean;
 

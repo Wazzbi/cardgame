@@ -1,12 +1,12 @@
 <div class="pokemon-detail" [class.player]="positionPlayer">
   <ng-container *ngIf="positionPlayer; else opponentPokemon">
     <div class="image">
-      <img [src]="pokemonImageUrl" alt="imgUrl">
+      <img [src]="pokeData.pokemonImg" alt="imgUrl">
     </div>
   </ng-container>
   <ng-template #opponentPokemon>
     <div class="image">
-      <img *ngIf="!waitingForPlayerActionEmitter" [src]="pokemonImageUrl" alt="imgUrl">
+      <img *ngIf="!waitingForPlayerActionEmitter" [src]="pokeData.pokemonImg" alt="imgUrl">
     </div> 
   </ng-template> 
 </div>

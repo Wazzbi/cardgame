@@ -5,7 +5,7 @@
 
   <app-pokemon-detail 
   [positionPlayer]="true"
-  [pokemonImageUrl]="gameState.players.player.activePokemon.pokemonImg"
+  [pokeData]="gameState.players.player.activePokemon"
   >
   </app-pokemon-detail>
 
@@ -15,7 +15,7 @@
 
   <app-pokemon-detail 
   [positionPlayer]="false"
-  [pokemonImageUrl]="gameState.players.opponent.activePokemon.pokemonImg"
+  [pokeData]="gameState.players.opponent.activePokemon"
   [waitingForPlayerActionEmitter]="waitingForPlayerActionEmitter"
   >
   </app-pokemon-detail>

@@ -37,10 +37,10 @@ export class CardService {
     return promise;
   } */
 
-  getPokemonImageUrl(pokeNo: number): Observable<string> {
+  /* getPokemonImageUrl(pokeNo: number): Observable<string> {
     const storageRef = firebase.storage().ref().child(`images/${pokeNo}.png`);
     return from(storageRef.getDownloadURL());
-  }
+  } */
 
   getPokemonData(pokeNo: number): PokeData {
     return this.pokeDataJs[pokeNo];
